@@ -1,30 +1,42 @@
-import React, { useState } from 'react';
+import React from 'react';
+
+import ProtectedLayout from './components/ProtectedLayout';
+import {
+  BrowserRouter ,
+  Routes,
+  Route,
+} from 'react-router-dom';
 import './App.css';
-import InputFeild from './components/InputFeild';
-import TodoList from './components/TodoList';
-import {Todo} from "./model";
-
-
+import Sidebar from './components/Sidebar';
+import DashBoard from './pages/DashBoard';
+import Home from './pages/Home';
+import Chat from './pages/Chat';
+import Rooms from './pages/Rooms';
+import Myprofile from './pages/Myprofile';
+import Settings from './pages/Settings';
+import Searchbar from './components/Searchbar';
+import Bookdata from "./data.json"
+import Login from "./pages/Login"
+import Sidebar2 from './components/Sidebar2';
+import Sidelayout from './components/Sidelayout';
+   /*   <ProtectedLayout body={<Searchbar placeholder="Enter usernaame" data={Bookdata}/>}/>
+      <ProtectedLayout body={<Sidebar/>}/>*/
 
 const App:React.FC = () => {
-  const [todo, setTodo] = useState<string>(""); 
-  const [todos, setTodos] = useState<Todo[]>([]); 
-  
-  const handleAdd = (e: React.FormEvent) =>{
-    e.preventDefault();
-    if (todo)
-    {
-      setTodos([...todos, {id: Date.now(), todo:todo, isDone:false}]);
-      setTodo("");
-    }
-  };
-
-  console.log(todos);
-  return (
+  return (  
     <div className="App">
-     <span className="heading">Ping Pong</span>
-     <InputFeild todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
-     <TodoList todos={todos} setTodos={setTodos}/>
+      <BrowserRouter>
+      <ProtectedLayout body={<Sidebar2  placeholder="Enter usernaame" data={Bookdata}/>}/>
+         <Routes>
+         <Route path="/" element={<Login />} />
+          <Route path="/Home"element={<Home/>}/>
+          <Route path="/DashBoard"element={<DashBoard/>}/>
+          <Route path="/Rooms"element={<Rooms/>}/>
+          <Route path="Chat/"element={<Chat/>}/>
+          <Route path="/Myprofile"element={<Myprofile/>}/>
+          <Route path="/Settings"element={<Settings/>}/>
+        </Routes>
+     </BrowserRouter>
     </div>
   );
 }
