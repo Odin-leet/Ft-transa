@@ -40,3 +40,9 @@ const App:React.FC = () => {
 }
 
 export default App;
+
+
+        <form method="get" action="./Home
+">            <img className='imgs'  src={myimg} alt="pof" width={"19vw"} height={"19vh"}/>
+              < button className='input_submit' type='submit' >Continue with Intra </button>
+              </form>
