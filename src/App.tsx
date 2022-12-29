@@ -1,5 +1,6 @@
 import React from 'react';
-
+import axios from "axios"
+import AvatarEditor from "react-avatar-editor";
 import ProtectedLayout from './components/ProtectedLayout';
 import {
   BrowserRouter ,
@@ -34,7 +35,7 @@ const App:React.FC = () => {
           <Route path="/Rooms"element={<Rooms/>}/>
           <Route path="Chat/"element={<Chat/>}/>
           <Route path="/Myprofile"element={<Myprofile/>}/>
-          <Route path="/Settings"element={<Settings/>}/>
+          <Route path="/Settings"element={<Settings />}/>
         </Routes>
      </BrowserRouter>
     </div>

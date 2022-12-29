@@ -1,0 +1,23 @@
+.imgg{
+
+        position: absolute;
+        height: 50%;
+        width: 25%;
+        border-radius: 50%;
+        border-color: white;
+        left: 0%;
+        top:25% ;
+        left: 37%;
+
+}
+
+.itemerank{
+position: absolute;
+left: 50%;
+top: 60%;
+background-color: white;
+border-radius: 50%;
+width: 15%;
+color:#192125 ;
+font-weight: 700;
+}

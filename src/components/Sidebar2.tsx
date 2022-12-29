@@ -92,13 +92,14 @@ const Sidebar2 = ({placeholder, data}:props) => {
     const len:Number = filtredData.length;
     let op:Number;
     const handleFilter = (event:React.FormEvent& { target: HTMLInputElement }) =>{
-        const searchWord = event.target.value
-        console.log(searchWord.length)
-
+        let searchWord :string;
+        searchWord = event.target.value
+        
         const newfilter =  data.filter((value) => {
             return value.name.includes(searchWord)
         })
-        if (Object.keys(newfilter).length == 0)
+        console.log(searchWord.length)
+        if (searchWord.length == 0)
         {
             setFiltredData([]);
         }
@@ -106,7 +107,6 @@ const Sidebar2 = ({placeholder, data}:props) => {
             setFiltredData(newfilter);
 
     }
-    console.log(len);
     return (
     
     <>
